@@ -1,14 +1,14 @@
 {
-    "projectType": "module",
-    "projectID": "",
-    "projectName": "wrappid",
-    "remote": true,
-    "repoProvider": "github.com",
-    "repoOwner": "wrappid",
-    "repoURL": "https://github.com/wrappid/wrappid-module.git",
-    "app": {
-        "renderType": []
-    },
-    "service": {},
-    "modules": {}
+  "projectType": "module",
+  "projectID": "wrappid-wrappid-github.com-4fb78d23-0b95-43f7-86af-3592c3dbcd9c",
+  "projectName": "test-wrappid-module",
+  "remote": true,
+  "repoProvider": "github.com",
+  "repoOwner": "wrappid",
+  "repoURL": "https://github.com/wrappid/test-wrappid-module.git",
+  "app": {
+    "renderType": []
+  },
+  "service": {},
+  "modules": {}
 }

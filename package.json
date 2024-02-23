@@ -7,7 +7,7 @@
     "prepare": "husky install",
     "attributions:gen": "node ./scripts/attributions.gen.js",
     "code:lint": "eslint -c .eslintrc.js --ignore-path .gitignore .",
-    "code:format": "npm run code:lint:app -- --fix",
+    "code:format": "npm run code:lint -- --fix",
     "code:lint:app": "eslint -c .eslintrc.js --ignore-path .gitignore ./app",
     "code:format:app": "npm run code:lint:app -- --fix",
     "code:lint:service": "eslint -c .eslintrc.js --ignore-path .gitignore service",
