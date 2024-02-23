@@ -9,7 +9,8 @@ export const ComponentsRegistry = {
   TestComponentsMobile: {
     comp: TestComponentMobile,
     web : false
-  },  TestComponentsWeb: {
+  },
+  TestComponentsWeb: {
     comp  : TestComponentWeb,
     mobile: false
   }
