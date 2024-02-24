@@ -1,7 +1,7 @@
 {
   "name": "test-wrappid-module",
   "version": "0.0.1",
-  "description": "This is a template repository for a wrappid module.",
+  "description": "this is wrappid module for testing.",
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
