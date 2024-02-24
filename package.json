@@ -1,5 +1,5 @@
 {
-  "name": "wrappid-module",
+  "name": "test-wrappid-module",
   "version": "0.0.1",
   "description": "This is a template repository for a wrappid module.",
   "main": "index.js",
