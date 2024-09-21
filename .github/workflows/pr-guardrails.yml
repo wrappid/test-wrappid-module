@@ -2,7 +2,7 @@ name    : PR Guardrails
 run-name: >
   Validating PR #${{ github.event.pull_request.number }}, opened by ${{ github.actor }}
 
-on: pull_request
+on: pull_request_target
 
 jobs:
   branchname:
