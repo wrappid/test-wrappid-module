@@ -7,7 +7,7 @@ Clearly describe the changes you've made in this pull request. Explain the purpo
 <!--List any related issues that this pull request addresses. -->
 
 ## Testing
-<!-- Describe the testing steps you have taken to ensure that your changes work as expected -->
+<!-- Describe the testing steps you have taken to ensure that your changes work as expected. -->
 
 ## Checklist
 
