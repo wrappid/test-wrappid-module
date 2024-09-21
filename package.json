@@ -10,8 +10,6 @@
     "code:format": "npm run code:lint:app -- --fix",
     "code:lint:app": "eslint -c .eslintrc.js --ignore-path .gitignore ./app",
     "code:format:app": "npm run code:lint:app -- --fix",
-    "code:lint:service": "eslint -c .eslintrc.js --ignore-path .gitignore service",
-    "code:format:service": "npm run code:lint:service -- --fix",
     "test": "jest",
     "release": "standard-version --bumpFiles ./package.json ./package-lock.json "
   },
@@ -40,7 +38,6 @@
     "@faker-js/faker": "~8.1.0",
     "@types/supertest": "~6.0.2",
     "@wrappid/core": "latest",
-    "@wrappid/service-core": "latest",
     "@wrappid/styles": "latest",
     "eslint": "~8.40.0",
     "eslint-import-resolver-typescript": "~3.6.1",
