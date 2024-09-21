@@ -32,16 +32,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out branch
+      - name: Check out the pull request branch
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Ensure full history is fetched
+
+      - name: Fetch base branch
+        run: git fetch origin ${{ github.event.pull_request.base.ref }} --depth=0
+
+      - name: Fetch all history for head branch
+        run: git fetch origin ${{ github.event.pull_request.head.ref }} --depth=0
 
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           cache: 'npm'
-          
+
       - name: Setup Wrappid npm registry
         run: |
           npm config set @wrappid:registry https://npm.pkg.github.com/wrappid
@@ -49,8 +55,8 @@ jobs:
 
       - name: Install commitlint
         run: |
-          npm i --force
-          npm install conventional-changelog-conventionalcommits@7.0.2 --force
+          npm ci
+          npm install conventional-changelog-conventionalcommits@7.0.2
 
       - name: Print versions
         run: |
@@ -59,12 +65,18 @@ jobs:
           npm --version
           npx commitlint --version
 
-      - name: Run commitlint
-        run: >
-          npx commitlint
-          --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }}
-          --to ${{ github.event.pull_request.head.sha }}
-          --verbose
+      - name: Get commit count
+        id: commit_count
+        run: echo "COMMIT_COUNT=$(git rev-list --count HEAD)" >> $GITHUB_ENV
+
+      - name: Run commitlint with fallback
+        run: |
+          if [ "$COMMIT_COUNT" -gt 1 ]; then
+            npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose;
+          else
+            echo "Fallback: Checking only the last commit...";
+            npx commitlint --to HEAD --verbose;
+          fi
 
   codelint-app:
     name: Validate app code style
