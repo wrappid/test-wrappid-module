@@ -10,7 +10,7 @@ const testGetAllFunc = async (req: any, res: any) => {
   try {
     const data: any = await testFunctions.readTestDataAll();
     return res.status(200).json({
-      message: "Response Data get success(•_•) :",
+      message: "Response Data get success (•_•) :",
       data,
     });
   } catch (error) {
