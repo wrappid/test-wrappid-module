@@ -5,7 +5,7 @@ import ModuleClasses from "../styles/ModuleClasses";
 export default function ModuleComponent() {
   return (
     <CoreBox styleClasses={[CoreClasses.PADDING.P5, ModuleClasses.TEST_WRAPPID_STYLE_CLASS]}>
-      <CoreTypographyBody1>ModuleComponent test test</CoreTypographyBody1>
+      <CoreTypographyBody1>ModuleComponent test test test</CoreTypographyBody1>
     </CoreBox>
   );
 }
